@@ -102,12 +102,14 @@
 #define SATP64_ASID			_ULL(0x0FFFF00000000000)
 #define SATP64_PPN			_ULL(0x00000FFFFFFFFFFF)
 
+// zh: unused definition here
 #define SATP_MODE_OFF			_UL(0)
 #define SATP_MODE_SV32			_UL(1)
 #define SATP_MODE_SV39			_UL(8)
 #define SATP_MODE_SV48			_UL(9)
 #define SATP_MODE_SV57			_UL(10)
 #define SATP_MODE_SV64			_UL(11)
+#define SATP_MODE_SV47			_UL(14)
 
 #define PMP_R				_UL(0x01)
 #define PMP_W				_UL(0x02)

@@ -66,12 +66,14 @@
 #define PRV_H	2
 #define PRV_M	3
 
+// zh: unused definition here
 #define VM_MBARE	0
 #define VM_MBB		1
 #define VM_MBBID	2
 #define VM_SV32		8
 #define VM_SV39		9
 #define VM_SV48		10
+#define VM_SV47 	14
 
 #define IRQ_S_SOFT	1
 #define IRQ_H_SOFT	2

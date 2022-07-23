@@ -481,6 +481,7 @@
 #define VM_1_09_SV32        8
 #define VM_1_09_SV39        9
 #define VM_1_09_SV48        10
+#define VM_1_09_SV47        14
 
 /* VM modes (satp.mode) privileged ISA 1.10 */
 #define VM_1_10_MBARE       0
@@ -489,6 +490,7 @@
 #define VM_1_10_SV48        9
 #define VM_1_10_SV57        10
 #define VM_1_10_SV64        11
+#define VM_1_10_SV47        14
 
 /* Page table entry (PTE) fields */
 #define PTE_V               0x001 /* Valid */

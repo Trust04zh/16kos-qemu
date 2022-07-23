@@ -317,12 +317,14 @@ static const char valid_vm_1_09[16] = {
     [VM_1_09_MBARE] = 1,
     [VM_1_09_SV39] = 1,
     [VM_1_09_SV48] = 1,
+    [VM_1_09_SV47] = 1,
 };
 static const char valid_vm_1_10[16] = {
     [VM_1_10_MBARE] = 1,
     [VM_1_10_SV39] = 1,
     [VM_1_10_SV48] = 1,
-    [VM_1_10_SV57] = 1
+    [VM_1_10_SV57] = 1,
+    [VM_1_10_SV47] = 1,
 };
 #endif /* CONFIG_USER_ONLY */
 

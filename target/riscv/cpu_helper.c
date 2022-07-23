@@ -389,6 +389,8 @@ static int get_physical_address(CPURISCVState *env, hwaddr *physical,
           levels = 4; ptidxbits = 9; ptesize = 8; break;
         case VM_1_10_SV57:
           levels = 5; ptidxbits = 9; ptesize = 8; break;
+        case VM_1_10_SV47:
+          levels = 3; ptidxbits = 11; ptesize = 8; break;
         case VM_1_10_MBARE:
             *physical = addr;
             *prot = PAGE_READ | PAGE_WRITE | PAGE_EXEC;
@@ -408,6 +410,8 @@ static int get_physical_address(CPURISCVState *env, hwaddr *physical,
           levels = 3; ptidxbits = 9; ptesize = 8; break;
         case VM_1_09_SV48:
           levels = 4; ptidxbits = 9; ptesize = 8; break;
+        case VM_1_09_SV47:
+          levels = 3; ptidxbits = 11; ptesize = 8; break;
         case VM_1_09_MBARE:
             *physical = addr;
             *prot = PAGE_READ | PAGE_WRITE | PAGE_EXEC;
