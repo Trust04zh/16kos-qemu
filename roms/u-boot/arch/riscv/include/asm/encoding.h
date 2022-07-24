@@ -166,7 +166,14 @@
 # define MCAUSE_CAUSE MCAUSE32_CAUSE
 #endif
 
+/* whethter 16k os is enabled, 16k os is not compatible with 4k os*/
+#define OS_16K
+// zh: unused definition here
+#ifdef OS_16K
+#define RISCV_PGSHIFT 14
+#else
 #define RISCV_PGSHIFT 12
+#endif
 #define RISCV_PGSIZE BIT(RISCV_PGSHIFT)
 
 /* CSR numbers */

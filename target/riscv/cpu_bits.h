@@ -506,8 +506,14 @@
 /* Page table PPN shift amount */
 #define PTE_PPN_SHIFT       10
 
+/* whethter 16k os is enabled, 16k os is not compatible with 4k os*/
+#define OS_16K
 /* Leaf page shift amount */
+#ifdef OS_16K
+#define PGSHIFT             14
+#else
 #define PGSHIFT             12
+#endif
 
 /* Default Reset Vector adress */
 #define DEFAULT_RSTVEC      0x1000
