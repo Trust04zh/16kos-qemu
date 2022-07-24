@@ -152,12 +152,19 @@
 
 #ifdef __riscv
 
+/* whethter 16k os is enabled, 16k os is not compatible with 4k os*/
+#define OS_16K
 #ifdef CONFIG_64BIT
 # define MSTATUS_SD MSTATUS64_SD
 # define SSTATUS_SD SSTATUS64_SD
 # define MCAUSE_INT MCAUSE64_INT
 # define MCAUSE_CAUSE MCAUSE64_CAUSE
-# define RISCV_PGLEVEL_BITS 9
+// zh: unused definition here
+#ifdef OS_16K
+#define RISCV_PGLEVEL_BITS		11
+#else
+#define RISCV_PGLEVEL_BITS		9
+#endif
 #else
 # define MSTATUS_SD MSTATUS32_SD
 # define SSTATUS_SD SSTATUS32_SD
@@ -166,8 +173,6 @@
 # define MCAUSE_CAUSE MCAUSE32_CAUSE
 #endif
 
-/* whethter 16k os is enabled, 16k os is not compatible with 4k os*/
-#define OS_16K
 // zh: unused definition here
 #ifdef OS_16K
 #define RISCV_PGSHIFT 14

@@ -139,10 +139,17 @@
 #define PTE_TABLE(PTE)			\
 	(((PTE) & (PTE_V | PTE_R | PTE_W | PTE_X)) == PTE_V)
 
+/* whethter 16k os is enabled, 16k os is not compatible with 4k os*/
+#define OS_16K
 #if __riscv_xlen == 64
 #define MSTATUS_SD			MSTATUS64_SD
 #define SSTATUS_SD			SSTATUS64_SD
+// zh: unused definition here
+#ifdef OS_16K
+#define RISCV_PGLEVEL_BITS		11
+#else
 #define RISCV_PGLEVEL_BITS		9
+#endif
 #define SATP_MODE			SATP64_MODE
 #else
 #define MSTATUS_SD			MSTATUS32_SD
@@ -150,8 +157,6 @@
 #define RISCV_PGLEVEL_BITS		10
 #define SATP_MODE			SATP32_MODE
 #endif
-/* whethter 16k os is enabled, 16k os is not compatible with 4k os*/
-#define OS_16K
 // zh: unused definition here
 #ifdef OS_16K
 #define RISCV_PGSHIFT			14
